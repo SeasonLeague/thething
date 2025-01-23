@@ -2,7 +2,7 @@ import type React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { setCurrentDocument, setDocumentContent } from "../store/playerSlice"
+import { setCurrentDocument, setDocumentContent, setAudioUrl} from "../store/playerSlice"
 import type { RootState } from "../store"
 import { parseDocument } from "../utils/documentParser"
 import { textToSpeech } from "../utils/elevenlabs"
@@ -25,9 +25,13 @@ const Home: React.FC = () => {
       dispatch(setDocumentContent(text))
 
       // Generate audio in the background
-      textToSpeech(text).then((audioUrl) => {
+      try {
+        const audioUrl = await textToSpeech(text)
         dispatch(setAudioUrl(audioUrl))
-      })
+      } catch (audioError) {
+        console.error("Audio generation failed:", audioError)
+        alert("Could not generate audio. The document will be displayed without sound.")
+      }
 
       navigate("/player")
     } catch (error) {
@@ -48,4 +52,3 @@ const Home: React.FC = () => {
 }
 
 export default Home
-

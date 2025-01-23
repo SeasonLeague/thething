@@ -6,21 +6,24 @@ import { motion, AnimatePresence } from "framer-motion"
 const slides = [
   {
     id: 1,
-    title: "Welcome to Document Reader",
+    title: "Welcome to The-Thing",
     description: "Transform your documents into audio with ease.",
-    image: "https://api.unsplash.com/photos/random/800x600?document",
+    image:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80",
   },
   {
     id: 2,
     title: "Upload Any Document",
     description: "Support for PDF, DOCX, and TXT files.",
-    image: "https://api.unsplash.com/photos/random/800x600?upload",
+    image:
+      "https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
   },
   {
     id: 3,
     title: "Listen On-the-Go",
     description: "Convert your documents to speech and listen anywhere.",
-    image: "https://api.unsplash.com/photos/random/800x600?listening",
+    image:
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
 ]
 
